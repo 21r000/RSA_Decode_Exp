@@ -11,6 +11,7 @@ It is mainly used to record the RSA decryption script that you have compiled
 - RSA_Small_E_Attack_Decode
 - RSA_Wilson's_Decode
 - RSA_p⊕q_Decode
+- RSA_Low-P_Attack_Decode
 
 
 ## Write at the end
