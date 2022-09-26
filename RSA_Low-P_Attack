@@ -1,0 +1,19 @@
+from Crypto.Util.number import *
+import tqdm
+
+n = 
+c = 
+p = 
+e = 
+PR.< x > = Zmod(n)[]
+for i in tqdm.tqdm(range(2 ** 15)):
+    i = Integer(i)
+    f = p + i * 2 ** (560) + x * 2 ** (560 + i.nbits())
+    res = f.monic().small_roots(X = 2 ^ (1024 - 560 - i.nbits()), beta=0.4)
+    if res:
+        print(res)
+        p = p + i * 2 ** (560) + int(res[0]) * 2 ** (560 + i.nbits())
+        q = n // p
+        if  p * q == n:
+            d = inverse(e,(p - 1) * (q - 1))
+            print(long_to_bytes(int(pow(c,d,n))))
